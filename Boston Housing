@@ -19,3 +19,20 @@ from sklearn.model_selection import GridSearchCV
 import warnings
 from sklearn import metrics
 warnings.filterwarnings("ignore") # To ignore warning for boston dataset
+
+df=pd.read_csv('BostonHousing.csv')
+x=41
+X=.41
+
+datarowsSeries=[pd.Series([0.069,10,2.3,0,0.53,6.5,65.2,4.01,1,290,15,395,4.9,24.0],index=df.columns),
+pd.Series([0.69+x,10+x,2.3+X,0,0.5+X,6.5+X,65.2+X,4.1+X,1,290+x,15+x,395+x,4.9+X,24.3+x],index=df.columns),
+pd.Series([0.68+x,11+x,2.4+X,0,0.6+X,6.6+X,65.1+X,4.0+X,1,291+x,13+x,390+x,4.2+X,24.2+x],index=df.columns),
+pd.Series([0.67+x,12+x,2.5+X,0,0.4+X,6.5+X,65.3+X,4.2+X,1,292+x,14+x,392+x,4.3+X,24.1+x],index=df.columns),
+pd.Series([0.66+x,13+x,2.4+X,0,0.7+X,6.5+X,65.4+X,4.1+X,1,293+x,16+x,391+x,4.4+X,24.2+x],index=df.columns)]
+new_data=df.append(datarowsSeries,ignore_index=True)
+new_data
+
+new_data.shape
+new_data.info()
+
+
