@@ -20,6 +20,8 @@ import warnings
 from sklearn import metrics
 warnings.filterwarnings("ignore") # To ignore warning for boston dataset
 
+import numpy as np
+import pandas as pd
 df=pd.read_csv('BostonHousing.csv')
 x=41
 X=.41
@@ -34,5 +36,32 @@ new_data
 
 new_data.shape
 new_data.info()
+
+
+import matplotlib.pyplot as plt
+import matplotlib.mlab as mlab
+import seaborn as sns
+Boxplot=new_data.drop('Price', axis = 'columns') #declared axis as columns
+fig, axs = plt.subplots(1, len(Boxplot.columns), figsize=(20,10)) #Specifies the length of the figure
+for i, Axis in enumerate(axs.flat):
+  Axis.boxplot(Boxplot.iloc[:,i])
+  Axis.set_title(Boxplot.columns[i], fontsize=12, fontweight='bold')
+  Axis.tick_params(axis ='y', labelsize=18) 
+plt.tight_layout()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
