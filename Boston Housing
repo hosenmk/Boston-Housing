@@ -49,9 +49,10 @@ for i, Axis in enumerate(axs.flat):
   Axis.tick_params(axis ='y', labelsize=18) 
 plt.tight_layout()
 
-
-
-
+new_data.describe()
+new_data.mode()
+new_data.median()
+new_data.corr()
 
 
 
