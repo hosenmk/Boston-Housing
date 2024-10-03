@@ -54,7 +54,14 @@ new_data.mode()
 new_data.median()
 new_data.corr()
 
-
+def function(x):
+  if x<=20:
+    return 'Low'
+  else:
+    return 'High'
+new_data['Price']=new_data['Price'].apply(function)
+sns.set_style('whitegrid');
+sns.pairplo
 
 
 
