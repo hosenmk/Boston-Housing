@@ -64,7 +64,17 @@ sns.set_style('whitegrid');
 sns.pairplot(new_data, hue = 'Price')
 plt.show()
 
+new_data['Price'].value_counts()
 
+import numpy as np
+objects = ('High', 'Low')
+x_pos = np.arange(len(objects))
+status_fre=[296, 215]
+plt.bar(x_pos, status_fre)
+plt.xticks(x_pos, objects)
+plt.ylabel('No of house')
+plt.title('House price')
+plt.show()
 
 
 
