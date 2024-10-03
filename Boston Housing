@@ -61,7 +61,8 @@ def function(x):
     return 'High'
 new_data['Price']=new_data['Price'].apply(function)
 sns.set_style('whitegrid');
-sns.pairplo
+sns.pairplot(new_data, hue = 'Price')
+plt.show()
 
 
 
