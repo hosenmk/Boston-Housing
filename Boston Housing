@@ -77,10 +77,18 @@ plt.title('House price')
 plt.show()
 
 
+import statsmodels.api as sm
+x=new_data.drop('Price',axis='columns')
+y=new_data['Price'].map({'Low':0,'High':1})
+logitmodel=sm.Logit(y,x)
+result=logitmodel.fit()
+print(result.summary2())
+
+from sklearn.model_selection import train_test_split
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.30, random_state= 113)
 
 
-
-
+#####(i) Logistic Regression
 
 
 
