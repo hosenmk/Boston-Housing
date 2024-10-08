@@ -89,6 +89,20 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.30, random
 
 
 #####(i) Logistic Regression
+from sklearn.linear_model import LogisticRegression
+logmodel = LogisticRegression()
+logmodel.fit(x_train, y_train)
+y_pred=logmodel.predict(x_test)
 
+from sklearn.metrics import classification_report, confusion_matrix, accuracy_score, precision_score
+print(classification_report(y_test, y_pred))
+cm = confusion_matrix(y_test, y_pred)
+print(confusion_matrix(y_test, y_pred))
+print("Accuracy : ", accuracy_score(y_test, y_pred))
+print("Precision : ", precision_score(y_test, y_pred))
+specificity = cm[0,0]/(cm[0,0]+cm[0,1])
+print('Specificity : ', specificity )
+sensivity = cm[1,1]/(cm[1,0]+cm[1,1])
+print('Sensivity : ', sensivity)
 
 
