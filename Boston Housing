@@ -105,4 +105,9 @@ print('Specificity : ', specificity )
 sensivity = cm[1,1]/(cm[1,0]+cm[1,1])
 print('Sensivity : ', sensivity)
 
+probs = logmodel.predict_proba(x_test)
+predLR = probs[:,1]
+from sklearn.metrics import roc_curve, roc_auc_score
+auc = roc_auc_score(y_test, predLR)
+print('LR AUC:', auc)
 
