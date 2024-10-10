@@ -123,7 +123,21 @@ plt.ylabel('True Positive Rate')
 
 Text(0, 0.5, 'True Positive Rate')
 
-
+## Decision tree
+from sklearn import tree
+DTclf=tree.DecisionTreeClassifier()
+DTclf.fit(x_train, y_train)
+y_pred= DTclf.predict(x_test)
+from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
+print(classification_report(y_test, y_pred))
+cm = confusion_matrix(y_test, y_pred)
+print(confusion_matrix(y_test, y_pred))
+print("Accuracy : ", accuracy_score(y_test, y_pred))
+print("Precision : ", precision_score(y_test, y_pred))
+specificity = cm[0,0]/(cm[0,0]+cm[0,1])
+print('Specificity : ', specificity )
+sensivity = cm[1,1]/(cm[1,0]+cm[1,1])
+print('Sensivity : ', sensivity)
 
 
 
