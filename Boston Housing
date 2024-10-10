@@ -139,7 +139,10 @@ print('Specificity : ', specificity )
 sensivity = cm[1,1]/(cm[1,0]+cm[1,1])
 print('Sensivity : ', sensivity)
 
-
+probsDT = DTclf.predict_proba(x_test)
+probsDT = probsDT[:, 1]
+auc2 = roc_auc_score(y_test, probsDT)
+print('DT AUC2:', auc2)
 
 
 
