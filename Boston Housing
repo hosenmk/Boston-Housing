@@ -111,3 +111,30 @@ from sklearn.metrics import roc_curve, roc_auc_score
 auc = roc_auc_score(y_test, predLR)
 print('LR AUC:', auc)
 
+fpr, tpr, thresholds = roc_curve(y_test, predLR)
+plt.figure()
+lw = 2
+plt.plot(fpr, tpr, color='Green',lw=lw, label='LR(AUC = %0.4f)' % auc)
+plt.plot([0, 1], [0, 1], color='red', lw=lw, linestyle='-')
+plt.xlim([0.0, 1.0])
+plt.ylim([0.0, 1.05])
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+
+Text(0, 0.5, 'True Positive Rate')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
