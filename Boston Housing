@@ -144,7 +144,20 @@ probsDT = probsDT[:, 1]
 auc2 = roc_auc_score(y_test, probsDT)
 print('DT AUC2:', auc2)
 
+fpr2, tpr2, thresholds2 = roc_curve(y_test, probsDT)
+plt.figure()
+lw = 2
 
+plt.plot([0, 1], [0, 1], color='red', lw=lw, linestyle='_')
+plt.plot(fpr2, tpr2, color='green', lw=lw, label='DT(AUC = %0.f)' % auc2)
+plt.xlim([0.0, 1.0])
+plt.ylim([0.0, 1.05])
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+
+###plt.title('Receiver operating characteristic')
+plt.legend(loc='lower right')
+plt.show()
 
 
 
