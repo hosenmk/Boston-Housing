@@ -176,7 +176,7 @@ print('Specificity : ', specificity)
 sensivity = cm[1,1]/(cm[1,0]+cm[1,1])
 print('Sensivity : ', sensivity)
 
-
+probsRF = RFclf.predict_proba(x_test)
 
 
 
