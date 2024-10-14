@@ -177,6 +177,11 @@ sensivity = cm[1,1]/(cm[1,0]+cm[1,1])
 print('Sensivity : ', sensivity)
 
 probsRF = RFclf.predict_proba(x_test)
+probsRF = probsRf[:, 1]
+from sklearn.metrics import roc_curve, roc_auc_score
+auc3 = roc_auc_score(y_test, probsRF)
+print('RF AUC3:', auc3)
+
 
 
 
