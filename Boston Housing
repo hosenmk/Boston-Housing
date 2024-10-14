@@ -182,7 +182,9 @@ from sklearn.metrics import roc_curve, roc_auc_score
 auc3 = roc_auc_score(y_test, probsRF)
 print('RF AUC3:', auc3)
 
-
+fpr3, tpr3, thresholds3 = roc_curve(y_test, probsRF)
+plt.figure()
+lw = 2
 
 
 
