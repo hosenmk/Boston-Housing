@@ -213,6 +213,7 @@ print("Specificity : ", specificity)
 sensivity = cm[1,1]/(cm[1,0]+cm[1,1])
 print("Sensivity : ", sensivity)
 
-
+probsSV = SVclf.fit(x_train, y_train).decision_function(x_test)
+from sklearn.metrics import roc_curve, roc_auc_score
 
 
