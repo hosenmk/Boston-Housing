@@ -215,5 +215,13 @@ print("Sensivity : ", sensivity)
 
 probsSV = SVclf.fit(x_train, y_train).decision_function(x_test)
 from sklearn.metrics import roc_curve, roc_auc_score
+auc4 = roc_auc_score(y_test, probsSV)
+print('SVM AUC4:', auc4)
+
+fpr4, tpr4, thresholds4 = roc_curve(y_test, probsSV)
+plt.figure()
+lw = 2
+
+
 
 
