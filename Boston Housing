@@ -222,7 +222,9 @@ fpr4, tpr4, thresholds4 = roc_curve(y_test, probsSV)
 plt.figure()
 lw = 2
 plt.plot(fpr2, trp2, color='green' lw=lw, label='SVM(AUC = %0.4f)'% auc4)
-
+plt.plot([0, 1], [0, 1], color='red', lw=lw, linestyle='_')
+plt.xlim([0.0, 1.0])
+plt.ylim([0.0, 1.05])
 
 
 
