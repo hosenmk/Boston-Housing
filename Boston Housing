@@ -221,6 +221,7 @@ print('SVM AUC4:', auc4)
 fpr4, tpr4, thresholds4 = roc_curve(y_test, probsSV)
 plt.figure()
 lw = 2
+plt.plot(fpr2, trp2, color='green' lw=lw, label='SVM(AUC = %0.4f)'% auc4)
 
 
 
